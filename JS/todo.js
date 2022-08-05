@@ -1,7 +1,7 @@
 const toDoForm = document.getElementById("todo-form");
 const toDoList = document.getElementById("todo-list");
 const toDoInput = toDoForm.querySelector("input"); // === toDoForm.getElementById("todo-form input");
-const toDos = [];
+let toDos = [];     // 기존에 있던 리스트가 새로운 것에 덮어씌어지는 문제. let을 이용해 기존의 것에 추가만 할 것임.
 
 const TODOS_KEY = "todos";
 
@@ -25,7 +25,7 @@ function saveToDos() {
 
 
 /* 투두리스트 화면 생성 */
-function paintToDo(argNewToDo){
+function paintToDo(argNewToDo){ /* func toDoSubmit > func paintToDo */
     const liEliment = document.createElement("li"); // html에 <li> 생성
     const spanEliment = document.createElement("span");     // html에 <span> 생성
     const deleteBtnEliment = document.createElement("button");
@@ -50,8 +50,8 @@ const keepToDos = localStorage.getItem(TODOS_KEY);
 console.log(keepToDos);
 if(keepToDos!==null){
     const parsedToDos = JSON.parse(keepToDos);
-    parsedToDos.forEach((item) => console.log("this is turn of", item));  // array에서 처리되고 있는 item 인자를 그냥 제공.
-
+    toDos = parsedToDos;
+    parsedToDos.forEach(paintToDo);  // array에서 처리되고 있는 item 인자를 그냥 제공.
 }
 
 function sayHello(item){    // JS에서 eventListner의 인자를 그냥 제공해주는 것처럼, 지금 처리되고 있는 item 또한 그냥 제공해줌.
