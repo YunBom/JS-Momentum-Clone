@@ -46,7 +46,8 @@ function paintToDo(newTodoObject){ /* func toDoSubmit > func paintToDo */
 function deleteToDo(deleteEvent) {
     const li = deleteEvent.target.parentElement;  // console.dir()로 하나하나 찾아감. 이벤트가 발생한 btn의 타겟을 찾아, 그 부모를 찾고 그 부모인 <li>를 삭제.
     li.remove();  // 삭제
-    // this.parentNode.remove();    -> 위 코드를 이 한줄로도 구현 가능
+    toDos = toDos.filter((toDo) => toDo.id !== parseInt(li.id));    // toDo.id = number, li.id = sting  > 이 둘을 통일
+    saveToDos();    // todo를 지운 뒤, saveToDOs 함수를 한번 더 실행(DB에 저장)
     console.log(li.id);
 };
 
@@ -61,6 +62,13 @@ if(keepToDos!==null){
 };
 
 
+/* todolist 삭제 - filter 함수로 array를 지웠다가 삭제된 요소만 제외하고 다시 array 생성 */
+function awesomeFilter(item){
+    return item < 1000;
+};
+
+awesomeArray = [1000, 243, 1493,48,23,442].filter(awesomeFilter);
+console.log(awesomeArray);
 
 
 
