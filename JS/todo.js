@@ -54,7 +54,6 @@ function deleteToDo(deleteEvent) {
 
 /* 투두리스트 지속보관 */
 const keepToDos = localStorage.getItem(TODOS_KEY);
-console.log(keepToDos);
 if(keepToDos!==null){
     const parsedToDos = JSON.parse(keepToDos);
     toDos = parsedToDos;
