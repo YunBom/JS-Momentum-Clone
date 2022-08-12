@@ -2,6 +2,8 @@
 
 
 const API_KEY = "40c05b28bdc72f6d8159841f66b71074";
+const weatherState = document.getElementById("weather-msg");
+
 function onGeoOk(position){     // position : JS가 user의 postition을 전달하는 매개변수.
     console.log(position);  // onGeoOK가 받는 매개변수 object가 무엇인지 보여줌 [ GeolocationPosition ]
     const lat = position.coords.latitude;   // latitude 경도
@@ -17,9 +19,9 @@ function onGeoOk(position){     // position : JS가 user의 postition을 전달�
     });     // JS에서 url 호출. F12 네트워크
 };
 function onGeoError(){
-    alert("Can't find you. No weather for you.");
+    weatherState.innerText = "위치 권한을 허용해주세요";
 };
 
 navigator.geolocation.getCurrentPosition(onGeoOk,onGeoError);   // 유저의 위치 호출
-
+weatherState.innerText = "날씨를 불러오고 있습니다"
 

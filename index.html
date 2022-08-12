@@ -9,28 +9,44 @@
 </head>
 
 <body>
-    <form class="hidden" id="login-form">
-        <input required maxlength="15" type="text" placeholder="What is your name?" />
-        <button> Log in </button>
-    </form>
-
-    <h2 id="clock">00:00:00</h2>
-    <h1 id="greeting" class="hidden">  </h1>
-
-    <form id="todo-form">
-        <input type="text" placeholder="할 일을 적고 엔터를 누르세요.">
-    </form>
-    <ul id="todo-list"></ul>    <!-- JS로 [ ul > li > span, 삭제btn ]생성.  -->
-
-    <div id="quote">
-        <span></span>
-        <span></span>
+    <div>
+        <form class="hidden" id="login-form">
+            <input required maxlength="15" type="text" placeholder="What is your name?" />
+            <button> Log in </button>
+        </form>
     </div>
 
-    <div id="weather">
-        <span></span>
-        <span></span>
+    <div>
+        <h2 id="clock" class="default-font">00:00:00</h2>
+    </div>
+    <div>
+        <h1 id="greeting" class="hidden default-font">  </h1>
+    </div>
 
+    <div>       
+        <form id="todo-form">
+            <input type="text" placeholder="할 일을 적고 엔터를 누르세요.">
+        </form>
+    </div>
+
+    <div>
+        <ul id="todo-list"></ul>    <!-- JS로 [ ul > li > span, 삭제btn ]생성.  -->
+    </div>
+
+    <div>
+        <div id="quote" class="default-font">
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+
+    <div>
+        <div id="weather" class="default-font">
+            <span></span>
+            <span></span>
+            <span id="weather-msg"></span>
+            
+        </div>
     </div>
 
 <!-- JS -->
