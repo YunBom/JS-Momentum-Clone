@@ -1,6 +1,3 @@
-// https://openweathermap.org/api - 날씨 API
-
-
 const API_KEY = "40c05b28bdc72f6d8159841f66b71074";
 function onGeoOk(position){     // position : JS가 user의 postition을 전달하는 매개변수.
     console.log(position);  // onGeoOK가 받는 매개변수 object가 무엇인지 보여줌 [ GeolocationPosition ]
