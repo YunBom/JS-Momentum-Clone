@@ -40,6 +40,9 @@ function paintToDo(newTodoObject){ /* func toDoSubmit > func paintToDo */
     liEliment.appendChild(deleteBtnEliment);    // <li> 안에 삭제버튼
     spanEliment.innerText = newTodoObject.text;     // <span>에 사용자가 입력하여 인자로 받은 값을 넣어줌.
     toDoList.appendChild(liEliment);       // <ul> 안에 <li>를 넣음.
+    
+    spanEliment.style.color = "white";
+    spanEliment.style.fontWeight = "bold";
 }
 
 /* todolist 삭제버튼 */
