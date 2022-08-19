@@ -34,15 +34,19 @@ function paintToDo(newTodoObject){ /* func toDoSubmit > func paintToDo */
     liEliment.id = newTodoObject.id;
     const spanEliment = document.createElement("span");     // html에 <span> 생성
     const deleteBtnEliment = document.createElement("button");
-    deleteBtnEliment.innerText = "❌"
+    deleteBtnEliment.innerText = "x"
     deleteBtnEliment.addEventListener("click", deleteToDo);
     liEliment.appendChild(spanEliment);     // <li> 안에 <span>을 넣음
-    liEliment.appendChild(deleteBtnEliment);    // <li> 안에 삭제버튼
+    liEliment.appendChild(deleteBtnEliment);    // <li> 안에 삭제버튼 : <li> <span></span> <btn></btn> </li>
     spanEliment.innerText = newTodoObject.text;     // <span>에 사용자가 입력하여 인자로 받은 값을 넣어줌.
     toDoList.appendChild(liEliment);       // <ul> 안에 <li>를 넣음.
     
     spanEliment.style.color = "white";
     spanEliment.style.fontWeight = "bold";
+    deleteBtnEliment.style.marginLeft = "10px";
+    deleteBtnEliment.style.backgroundColor = "white";
+    deleteBtnEliment.style.border = 0;
+    deleteBtnEliment.style.borderRadius = "10px";
 }
 
 /* todolist 삭제버튼 */
